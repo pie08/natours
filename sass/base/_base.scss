@@ -8,9 +8,28 @@
 
 html {
   // Defines 1rem
-  font-size: 62.5%;
+  font-size: 62.5%; // 1 rem = 10px
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8x
+    overflow-x: hidden;
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+    overflow-x: hidden;
+  }
 }
